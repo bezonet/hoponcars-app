@@ -3,11 +3,17 @@ import firstlastname from "../Screens/firstlastname";
 import TermAndPolicy from "../Screens/TermAndPolicy";
 import NumberVerify from "../Screens/NumberVerify";
 import LoginScreen from '../Screens/LoginScreen';
+import EnterPickerlocation from "../Screens/AcessMaplocation/EnterPickerlocation"
 const Stack = createNativeStackNavigator();
 const Navigation = () => {
    return (
       <Stack.Navigator>
         <Stack.Screen
+          name="EnterPickerlocation"
+          component={EnterPickerlocation}
+          options={{headerShown: false}}
+        />
+        {/* <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
           options={{headerShown: false}}
@@ -26,7 +32,7 @@ const Navigation = () => {
           name="TermAndPolicy"
           component={TermAndPolicy}
           options={{headerShown: false}}
-        /> 
+        />  */}
        
 
        
