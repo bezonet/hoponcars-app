@@ -1,44 +1,39 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import firstlastname from "../Screens/firstlastname";
-import TermAndPolicy from "../Screens/TermAndPolicy";
-import NumberVerify from "../Screens/NumberVerify";
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import firstlastname from '../Screens/firstlastname';
+import TermAndPolicy from '../Screens/TermAndPolicy';
+import NumberVerify from '../Screens/NumberVerify';
 import LoginScreen from '../Screens/LoginScreen';
-import EnterPickerlocation from "../Screens/AcessMaplocation/EnterPickerlocation"
+import EnterPickerlocation from '../Screens/AcessMaplocation/EnterPickerlocation';
 const Stack = createNativeStackNavigator();
 const Navigation = () => {
-   return (
-      <Stack.Navigator>
-        <Stack.Screen
-          name="EnterPickerlocation"
-          component={EnterPickerlocation}
-          options={{headerShown: false}}
-        />
-        {/* <Stack.Screen
-          name="LoginScreen"
-          component={LoginScreen}
-          options={{headerShown: false}}
-        />
-          <Stack.Screen
-          name="NumberVerify"
-          component={NumberVerify}
-          options={{headerShown: false}}
-        />
-         <Stack.Screen
-          name="firstlastname"
-          component={firstlastname}
-          options={{headerShown: false}}
-        />
-          <Stack.Screen
-          name="TermAndPolicy"
-          component={TermAndPolicy}
-          options={{headerShown: false}}
-        />  */}
-       
-
-       
-       
-       
-      </Stack.Navigator>
-    );
-  };
-  export default Navigation;
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="EnterPickerlocation"
+        component={EnterPickerlocation}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="LoginScreen"
+        component={LoginScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="NumberVerify"
+        component={NumberVerify}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="firstlastname"
+        component={firstlastname}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="TermAndPolicy"
+        component={TermAndPolicy}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+};
+export default Navigation;

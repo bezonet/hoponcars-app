@@ -1,22 +1,15 @@
-
-
 import React from 'react';
 import Navigation from './src/Navigation/index';
-import {SafeAreaView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
- 
+import Cars from './src/Screens/Cars';
 
-const App=()=>{
-  return(
-   
-    <SafeAreaView style={{flex: 1,backgroundColor:'red'}}>
-    <NavigationContainer>
-    <Navigation />
-  </NavigationContainer>
-  </SafeAreaView>
-
-  )
-}
-
+const App = () => {
+  return (
+    // <NavigationContainer>
+    //   <Navigation />
+    // </NavigationContainer>
+    <Cars />
+  );
+};
 
 export default App;
