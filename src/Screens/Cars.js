@@ -1,7 +1,23 @@
 import React from 'react';
-import {Text, StyleSheet, View, Image, Button, ScrollView} from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  View,
+  Image,
+  Button,
+  ScrollView,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
+// import {useNavigation} from '@react-navigation/native';
 
 const Cars = () => {
+  // const navigation = useNavigation();
+
+  const goToCash = () => {
+    Alert.alert('Payment screen');
+  };
+
   const CarsData = [
     {
       carName: 'Saloon Car',
@@ -48,7 +64,11 @@ const Cars = () => {
           <Text style={styles.carDetails}>{item.Luggages} Luggages</Text>
           <Text style={styles.carPrice}>One Way ${item.price}</Text>
           <View style={styles.buttonContainer}>
-            <Button title="Book Now" color="#FFB300" onPress={() => {}} />
+            <TouchableOpacity style={styles.bookBtn} onPress={goToCash}>
+              <Text style={{color: '#FFB61D', fontWeight: 'bold'}}>
+                Book now
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       ))}
@@ -61,37 +81,37 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     backgroundColor: '#212121',
-    // padding: 10,
+    padding: 10,
   },
   carItem: {
     backgroundColor: '#333',
     borderRadius: 10,
     width: '45%',
-    margin: 5,
-    // alignItems: 'center',
+    marginVertical: 10,
     borderWidth: 1,
     borderColor: '#FFB300',
+    padding: 10,
   },
   carName: {
     fontSize: 18,
     fontWeight: 'bold',
     color: '#FFFFFF',
-    marginVertical: 5,
+    marginBottom: 10,
   },
   carDetails: {
     color: '#FFD700',
-    marginVertical: 2,
+    marginBottom: 5,
   },
   carPrice: {
     color: '#FFFFFF',
-    marginVertical: 5,
+    marginBottom: 10,
     fontWeight: 'bold',
   },
   buttonContainer: {
     marginTop: 10,
-    width: '100%',
+    width: '60%',
     borderRadius: 5,
     overflow: 'hidden',
   },
@@ -100,6 +120,16 @@ const styles = StyleSheet.create({
     height: 100,
     resizeMode: 'contain',
     marginBottom: 10,
+  },
+  bookBtn: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: '#FFB61D',
+    borderWidth: 2,
+    borderRadius: 10,
+    paddingHorizontal: 5,
+    paddingVertical: 3,
   },
 });
 
