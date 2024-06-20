@@ -19,7 +19,11 @@ import {
     MediumBlue: "#0218C3",
     purpleblue:'#535AFF',
     lightGray:'#979797',
-    dulblack:'#1A1A1A'
+    greish:'#DADADA',
+    lightblack:'#1A1A1A',
+    yellow:'#FDB714'
+
+    
   };
   
   export const radius = {
