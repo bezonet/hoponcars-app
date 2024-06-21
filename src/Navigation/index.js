@@ -38,13 +38,13 @@ component={SplashScreenTwo}/>
         /> */}
         {/* <Stack.Screen name="AddMoreInputField" component={AddMoreInputField}
                   options={{headerShown: false}}/> */}
- {/* <Stack.Screen name="MapPinLocation" component={MapPinLocation}
-  options={{headerShown: false}}/>  */}
+ <Stack.Screen name="MapPinLocation" component={MapPinLocation}
+  options={{headerShown: false}}/> 
 
 
-<Stack.Screen name="Mapping"
+{/* <Stack.Screen name="Mapping"
 component={Mapping}
-options={{headerShown: true}}/>
+options={{headerShown: true}}/> */}
 
 
 

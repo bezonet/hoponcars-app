@@ -7,8 +7,9 @@ import MapView, { Marker, Polyline } from 'react-native-maps';
 import CustomButton from '../../components/CustomButton';
 
 const MapPinLocation = ({ navigation }) => {
-  const [source, setSource] = useState({ latitude: 37.78825, longitude: -122.4324 });
-  const [destination, setDestination] = useState({ latitude: 37.78825, longitude: -122.4324 });
+  
+  const [source, setSource] = useState({ latitude: 31.522849291201936, longitude:  74.26557150000002 });
+  const [destination, setDestination] = useState({ latitude: 31.513261286196453, longitude: 74.30921023707093});
   const [pickerPoint1, setPickerPoint1] = useState('');
   const [pickerPoint2, setPickerPoint2] = useState('');
   const [pickerPoint3, setPickerPoint3] = useState('');
