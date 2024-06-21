@@ -7,90 +7,90 @@ import {
 } from 'react-native-responsive-screen';
 import { colors } from '../../Constants/index';
 import MapView, { Marker } from 'react-native-maps';
-
+import CustomButton from '../../components/CustomButton';
 const EnterPickerLocation = ({ navigation }) => {
   const [text, setText] = useState('');
 
-  const mapStyle = [
-    { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
-    { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
-    { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
-    {
-      featureType: 'administrative.locality',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#d59563' }],
-    },
-    {
-      featureType: 'poi',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#d59563' }],
-    },
-    {
-      featureType: 'poi.park',
-      elementType: 'geometry',
-      stylers: [{ color: '#263c3f' }],
-    },
-    {
-      featureType: 'poi.park',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#6b9a76' }],
-    },
-    {
-      featureType: 'road',
-      elementType: 'geometry',
-      stylers: [{ color: '#38414e' }],
-    },
-    {
-      featureType: 'road',
-      elementType: 'geometry.stroke',
-      stylers: [{ color: '#212a37' }],
-    },
-    {
-      featureType: 'road',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#9ca5b3' }],
-    },
-    {
-      featureType: 'road.highway',
-      elementType: 'geometry',
-      stylers: [{ color: '#746855' }],
-    },
-    {
-      featureType: 'road.highway',
-      elementType: 'geometry.stroke',
-      stylers: [{ color: '#1f2835' }],
-    },
-    {
-      featureType: 'road.highway',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#f3d19c' }],
-    },
-    {
-      featureType: 'transit',
-      elementType: 'geometry',
-      stylers: [{ color: '#2f3948' }],
-    },
-    {
-      featureType: 'transit.station',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#d59563' }],
-    },
-    {
-      featureType: 'water',
-      elementType: 'geometry',
-      stylers: [{ color: '#17263c' }],
-    },
-    {
-      featureType: 'water',
-      elementType: 'labels.text.fill',
-      stylers: [{ color: '#515c6d' }],
-    },
-    {
-      featureType: 'water',
-      elementType: 'labels.text.stroke',
-      stylers: [{ color: '#17263c' }],
-    },
-  ];
+  // const mapStyle = [
+  //   { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+  //   { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+  //   { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+  //   {
+  //     featureType: 'administrative.locality',
+  //     elementType: 'labels.text.fill',
+  //     stylers: [{ color: '#d59563' }],
+  //   },
+  //   {
+  //     featureType: 'poi',
+  //     elementType: 'labels.text.fill',
+  //     stylers: [{ color: '#d59563' }],
+  //   },
+  //   {
+  //     featureType: 'poi.park',
+  //     elementType: 'geometry',
+  //     stylers: [{ color: '#263c3f' }],
+  //   },
+  //   {
+  //     featureType: 'poi.park',
+  //     elementType: 'labels.text.fill',
+  //     stylers: [{ color: '#6b9a76' }],
+  //   },
+  //   {
+  //     featureType: 'road',
+  //     elementType: 'geometry',
+  //     stylers: [{ color: '#38414e' }],
+  //   },
+  //   {
+  //     featureType: 'road',
+  //     elementType: 'geometry.stroke',
+  //     stylers: [{ color: '#212a37' }],
+  //   },
+  //   {
+  //     featureType: 'road',
+  //     elementType: 'labels.text.fill',
+  //     stylers: [{ color: '#9ca5b3' }],
+  //   },
+  //   {
+  //     featureType: 'road.highway',
+  //     elementType: 'geometry',
+  //     stylers: [{ color: '#746855' }],
+  //   },
+  //   {
+  //     featureType: 'road.highway',
+  //     elementType: 'geometry.stroke',
+  //     stylers: [{ color: '#1f2835' }],
+  //   },
+  //   {
+  //     featureType: 'road.highway',
+  //     elementType: 'labels.text.fill',
+  //     stylers: [{ color: '#f3d19c' }],
+  //   },
+  //   {
+  //     featureType: 'transit',
+  //     elementType: 'geometry',
+  //     stylers: [{ color: '#2f3948' }],
+  //   },
+  //   {
+  //     featureType: 'transit.station',
+  //     elementType: 'labels.text.fill',
+  //     stylers: [{ color: '#d59563' }],
+  //   },
+  //   {
+  //     featureType: 'water',
+  //     elementType: 'geometry',
+  //     stylers: [{ color: '#17263c' }],
+  //   },
+  //   {
+  //     featureType: 'water',
+  //     elementType: 'labels.text.fill',
+  //     stylers: [{ color: '#515c6d' }],
+  //   },
+  //   {
+  //     featureType: 'water',
+  //     elementType: 'labels.text.stroke',
+  //     stylers: [{ color: '#17263c' }],
+  //   },
+  // ];
 
   return (
     <View style={styles.container}>
@@ -148,9 +148,11 @@ const EnterPickerLocation = ({ navigation }) => {
       </View>
 
       <View style={styles.btnView}>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('PickSaveLocation')}>
-          <Text style={styles.buttonText}>Done</Text>
-        </TouchableOpacity>
+        <CustomButton
+          onPress={() => navigation.navigate('PickSaveLocation')}
+          title="Done"
+         
+        />
       </View>
     </View>
   );
@@ -198,18 +200,7 @@ const styles = StyleSheet.create({
     bottom: hp(3),
     width: '100%',
   },
-  button: {
-    backgroundColor: '#000',
-    paddingVertical: hp(2),
-    borderRadius: 5,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: wp(90),
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
-  },
+
   mapView: {
     flex: 1,
     backgroundColor: 'white',

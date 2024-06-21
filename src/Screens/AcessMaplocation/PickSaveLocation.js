@@ -10,6 +10,7 @@ import {
 import { colors } from '../../Constants/index';
 import MapView, { Marker } from 'react-native-maps';
 import Octicons  from 'react-native-vector-icons/Octicons';
+import CustomButton from '../../components/CustomButton'
 const EnterSaveLocation = ({ navigation }) => {
     const [text, setText] = useState('');
   return (
@@ -61,11 +62,13 @@ const EnterSaveLocation = ({ navigation }) => {
     </View>
 
 </View>
-        <View style={styles.btnView}>
-          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AddMorePickerlocation')}>
-            <Text style={styles.buttonText}>Confirm Destination</Text>
-          </TouchableOpacity>
-        </View>
+     <View style={styles.btnView}>
+        <CustomButton
+          onPress={() => navigation.navigate('AddMorePickerlocation')}
+          title="Confirm Destination"
+         
+        />
+      </View>
     </View>
      
  
@@ -135,18 +138,7 @@ height:hp(20),
       alignItems: 'center',
       margin:hp(3)
     },
-    button: {
-        backgroundColor: '#000000',
-        paddingVertical: 15,
-        borderRadius: 5,
-        marginTop: 40,
-        alignItems: 'center',
-        width: '95%',
-      },
-    buttonText: {
-      color: 'white',
-      fontSize: 18,
-    },
+
     mapView:{
       flex:1,
       backgroundColor:colors.lightblack,

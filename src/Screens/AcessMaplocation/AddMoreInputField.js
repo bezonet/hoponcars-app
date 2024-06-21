@@ -10,6 +10,7 @@ import {
 import { colors } from '../../Constants/index';
 import MapView, { Marker } from 'react-native-maps';
 import Octicons  from 'react-native-vector-icons/Octicons';
+import CustomButton from '../../components/CustomButton';
 const AddMoreInputField = ({ navigation }) => {
     const [text, setText] = useState('');
   return (
@@ -74,11 +75,13 @@ const AddMoreInputField = ({ navigation }) => {
     </View>
 
 </View>
-        <View style={styles.btnView}>
-          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MapPinLocation')}>
-            <Text style={styles.buttonText}>Confirm Destination</Text>
-          </TouchableOpacity>
-        </View>
+<View style={styles.btnView}>
+        <CustomButton
+          onPress={() => navigation.navigate('MapPinLocation')}
+          title="Confirm Destination"
+         
+        />
+      </View>
     </View>
      
  

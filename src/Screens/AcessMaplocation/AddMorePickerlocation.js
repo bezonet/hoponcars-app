@@ -9,6 +9,7 @@ import {
 
 import { colors } from '../../Constants/index';
 import MapView, { Marker } from 'react-native-maps';
+import CustomButton from '../../components/CustomButton';
 const EnterMorePickerlocation = ({ navigation }) => {
     const [text, setText] = useState('');
     const mapStyle = [
@@ -145,11 +146,13 @@ const EnterMorePickerlocation = ({ navigation }) => {
           />
         </MapView>
 </View>
-        <View style={styles.btnView}>
-          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AddMoreInputField')}>
-            <Text style={styles.buttonText}>Done</Text>
-          </TouchableOpacity>
-        </View>
+<View style={styles.btnView}>
+        <CustomButton
+          onPress={() => navigation.navigate('AddMoreInputField')}
+          title="Done"
+         
+        />
+      </View>
     </View>
      
  

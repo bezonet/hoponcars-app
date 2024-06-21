@@ -6,7 +6,7 @@ import {
 } from "react-native-responsive-screen";
 import { colors } from '../Constants/index';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import  CustomButton from '../components/CustomButton'
 const SplashScreenTwo = ({ navigation }) => {
   return (
     <View style={styles.container}>
@@ -18,11 +18,13 @@ const SplashScreenTwo = ({ navigation }) => {
         </View>
       </View>
       <View style={styles.btnView}>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EnterPickerlocation')}>
-          <Text style={styles.buttonText}>Get Started</Text>
-          <Ionicons name="arrow-forward" size={24} color="white" style={styles.arrow} />
-        </TouchableOpacity>
+        <CustomButton
+          onPress={() => navigation.navigate('EnterPickerlocation')}
+          title="Get Started"
+          iconName="arrow-forward"
+        />
       </View>
+    
     </View>
   );
 }
@@ -62,7 +64,6 @@ const styles = StyleSheet.create({
     color: colors.White,
   },
   arrowStyle: {
-    // marginLeft: wp(1),
   },
   btnView: {
     position: 'absolute',
@@ -70,20 +71,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
   },
-  button: {
-    backgroundColor: '#000',
-    paddingVertical: hp(2),
-    borderRadius: 5,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: wp(90),
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: wp(5),
-    marginRight: wp(2),
-  },
+  
   arrow: {
     marginLeft: wp(2),
   }
