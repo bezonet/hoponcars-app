@@ -189,7 +189,7 @@
 // export default MapPinLocation;
 
 import React, { useEffect, useRef, useState } from 'react';
-import { View, StyleSheet, Text, SafeAreaView, Dimensions } from 'react-native';
+import { View, StyleSheet, Text, SafeAreaView, Dimensions, Platform } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import MapViewDirections from 'react-native-maps-directions';
@@ -279,7 +279,7 @@ const MapPinLocation = () => {
       </View>
       <MapView
         ref={mapRef}
-        provider={PROVIDER_GOOGLE}
+        provider={Platform.OS == 'android' ? PROVIDER_GOOGLE : MapView.PROVIDER_GOOGLE}
         style={styles.map}
         initialRegion={coord}>
         {coord !== undefined && (
